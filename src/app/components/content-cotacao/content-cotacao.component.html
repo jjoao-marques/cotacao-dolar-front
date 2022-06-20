@@ -1,0 +1,36 @@
+<div class="content-cotacao">
+    <div class="itens-content">
+            <form action="" [formGroup]="cotacaoForm">
+                <div class="periodo-cotacao">
+                    <mat-form-field appearance="outline" >
+                        <mat-label>Informe a data inicial</mat-label>
+                        <input formControlName="startDate"  name="startDate" matInput [matDatepicker]="pickerInicial">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="pickerInicial"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerInicial></mat-datepicker>
+                    </mat-form-field>
+                    
+                    <span>Até</span>
+        
+                    <mat-form-field appearance="outline">
+                        <mat-label>Informe a data final</mat-label>
+                        <input formControlName="endDate" name="endDate" matInput [matDatepicker]="pickerFinal">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="pickerFinal"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerFinal></mat-datepicker>
+                    </mat-form-field>
+                    <button class="btn-find-cotacao" (click)="buscarCotacao()" mat-raised-button color="primary">OK</button>
+                    <a routerLink="">Voltar para home</a>
+                </div> 
+            </form>
+        <div class="cards-cotacao">
+            <mat-card *ngFor="let moeda of moedas">
+                <mat-card-content>
+                    <span class="data">{{ moeda.data }}</span>
+                    <span class="preco">{{ moeda.preco }}</span>
+                    <span class="hora">{{ moeda.hora}}</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

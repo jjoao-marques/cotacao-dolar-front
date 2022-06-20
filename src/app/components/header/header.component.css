@@ -1,0 +1,23 @@
+mat-toolbar {
+    padding: 0;
+}
+
+.header {
+    background-color: #3480F1;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.itens-header {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+.itens-header span {
+    font-family: 'Courier New', Courier, monospace;
+}
